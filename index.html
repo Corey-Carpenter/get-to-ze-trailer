@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1">
         <title>Get to Ze Trailer</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
     <body>
-        <h1>Movie Category Project</h1>
-        <h2>Choose Your Categories</h2>
-        <section>
-            <h3>Plot Points:</h3>
+        <h1 class="title">Movie Category Project</h1>
+        <h2 class="subtitle">Choose Your Categories</h2>
+        <section class="section is-medium">
+            <div class="box">
+            <h3 class="subtitle">Plot Points:</h3>
             <form action="/action_page.php">
-                <input type="checkbox" id="plot1" name="plot1" value="plot">
-                <label for="plot1">Space Battles</label><br>
-                <input type="checkbox" id="plot2" name="plot2" value="plot">
-                <label for="plot2">Robot Invasions</label><br>
-                <input type="checkbox" id="plot3" name="plot3" value="plot">
-                <label for="plot3">Pilots with cool nicknames</label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Space Battles
+                </label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Robot Invasions
+                </label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Pilots with cool nicknames
+                </label><br>
             </form>
-            <h3>Genres:</h3>
+        </div>
+        <div class="box">
+            <h3 class="subtitle">Genres:</h3>
             <form action="/action_page.php">
-                <input type="checkbox" id="genre1" name="genre1" value="genre">
-                <label for="genre1">Action</label><br>
-                <input type="checkbox" id="genre2" name="genre2" value="genre">
-                <label for="genre2">Comedy</label><br>
-                <input type="checkbox" id="genre3" name="genre3" value="genre">
-                <label for="genre3">Romantic</label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Action
+                </label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Comedy
+                </label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Romance
+                </label><br>
             </form>
+        </div>
         </section>
         <section>
-            <h2>Input Movie Title</h2>
             <form action="/action_page.php">
-                <input type="text" id="search" name="search" value="search">
+                <textarea class="textarea" placeholder="e.g. Movie Title"></textarea>
             </form>
         </section>
         <button>Search</button>
+        <script src="assets/script.js"></script>
     </body>
 </html>
