@@ -13,7 +13,7 @@ async function loadMovies(_searchTerm) {
 
 //finds movies on keyup
 //TODO: add hide-search-list id that displays none
-//TODO: 
+//TODO: either have it load movies on this page or set it up to load on movies.html
 function findMovies() {
     let searchTerm = (movieSearchBox.value);
     if (searchTerm.length > 0) {
