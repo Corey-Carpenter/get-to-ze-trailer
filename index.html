@@ -4,47 +4,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width", initial-scale="1">
         <title>Get to Ze Trailer</title>
+        <link rel="stylesheet" href="./assets/css/reset.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     </head>
-    <body>
+    <body style="background-color: aquamarine;">
         <h1 class="title">Movie Category Project</h1>
-        <h2 class="subtitle">Choose Your Categories</h2>
-        <section class="section is-medium">
-            <div class="box">
-            <h3 class="subtitle">Plot Points:</h3>
-            <form action="/action_page.php">
-                <label class="checkbox">
-                    <input type="checkbox">Space Battles
-                </label><br>
-                <label class="checkbox">
-                    <input type="checkbox">Robot Invasions
-                </label><br>
-                <label class="checkbox">
-                    <input type="checkbox">Pilots with cool nicknames
-                </label><br>
-            </form>
-        </div>
-        <div class="box">
-            <h3 class="subtitle">Genres:</h3>
-            <form action="/action_page.php">
-                <label class="checkbox">
-                    <input type="checkbox">Action
-                </label><br>
-                <label class="checkbox">
-                    <input type="checkbox">Comedy
-                </label><br>
-                <label class="checkbox">
-                    <input type="checkbox">Romance
-                </label><br>
-            </form>
-        </div>
-        </section>
-        <section>
+        <h2 class="subtitle">Search Your Favorite Movie</h2>
+        <section class="section">
             <form action="/action_page.php">
                 <textarea class="textarea" placeholder="e.g. Movie Title"></textarea>
             </form>
+             <div class="box" style="margin-top: 20px;">
+                    <p>Recent Searches</p>
+            </div>
         </section>
-        <button>Search</button>
+        <button class="button is-outlined" style="display: block; margin: auto;">Search</button>
         <script src="assets/script.js"></script>
     </body>
 </html>
