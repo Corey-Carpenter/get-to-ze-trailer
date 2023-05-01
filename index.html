@@ -13,7 +13,7 @@
         <section class="section is-medium">
             <div class="box">
             <h3 class="subtitle">Plot Points:</h3>
-            <form action="/action_page.php">
+            <form name="plotPoints" id="plotPoints">
                 <label class="checkbox">
                     <input type="checkbox">Space Battles
                 </label><br>
@@ -27,7 +27,7 @@
         </div>
         <div class="box">
             <h3 class="subtitle">Genres:</h3>
-            <form action="/action_page.php">
+            <form name="genres" id="genres">
                 <label class="checkbox">
                     <input type="checkbox">Action
                 </label><br>
@@ -50,7 +50,11 @@
                 <input type="text" id="search" name="search" value="search">
             </form>
         </section>
-        <button>Search</button>
+        <button id="fetch-button">Search</button>
+
+    
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="assets/js/script.js"></script>
     </body>
 </html>
