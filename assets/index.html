@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1">   
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Get to Ze Trailer</title>
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body style="background-color: rgb(20, 150, 197);">
+            <section> 
+
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="index.html">
+                <img src="assets/image/image.jpg" width="112" height="28">
+              </a>
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item">
+                  Home
+                </a>
+          
+                <a class="navbar-item">
+                  History
+                </a>
+          
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    More
+                  </a>
+          
+                  <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                      About
+                    </a>
+                    <a class="navbar-item">
+                      Jobs
+                    </a>
+                    <a class="navbar-item">
+                      Contact
+                    </a>
+                    <hr class="navbar-divider">
+                    <a  href ="report.html" class="navbar-item">
+                      Report an issue
+                    </a>
+                  </div>
+                </div>
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-primary">
+                      <strong>Recommended</strong>
+                    </a>
+                </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          </section>
+        <h1 class="title">Movie Category Project</h1>
+        <h2 class="subtitle">Search Your Favorite Movie</h2> 
+    
+    </section>
+
+
+
+    <!-- thiis is the section abou the movie-->
+        <section class="wrapper">
+                <div class = "search-container">
+
+                  <div class="field is-grouped search-element">
+                      <p class="control is-expanded">
+                        <input class="input" type="text" placeholder="Search Movie Title ..." 
+                        id = "movie-search-box" onkeyup="findMovies()" onclick ="findMovies()">
+                      </p>
+
+                        <div class = "search-list" id = "search-list">
+                        
+                                          <!-- list here -->
+                                <!-- <div class = "search-list-item">
+                                    <div class = "search-item-thumbnail">
+                                        <img src = "medium-cover.jpg">
+                                    </div>
+                                    <div class = "search-item-info">
+                                        <h3>Guardians of the Galaxy Vol. 2</h3>
+                                        <p>2017</p>
+                                    </div>
+                                </div> -->
+                              <div class="field is-grouped is-grouped-centered" >    
+                                  <p class="control ">
+                                    <a class="button is-primary" href="movies.html">
+                                      Search
+                                    </a>  </p>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+    
+            <!-- result container -->
+            <div class = "container">
+                <div class = "result-container">
+                    <div class = "result-grid" id = "result-grid">
+                        <!-- movie information here -->
+                        <!-- <div class = "movie-poster">
+                            <img src = "medium-cover.jpg" alt = "movie poster">
+                        </div>
+                        <div class = "movie-info">
+                            <h3 class = "movie-title">Guardians of the Galaxy Vol. 2</h3>
+                            <ul class = "movie-misc-info">
+                                <li class = "year">Year: 2017</li>
+                                <li class = "rated">Ratings: PG-13</li>
+                                <li class = "released">Released: 05 May 2017</li>
+                            </ul>
+                            <p class = "genre"><b>Genre:</b> Action, Adventure, Comedy</p>
+                            <p class = "writer"><b>Writer:</b> James Gunn, Don Abnett, Andy Lanning</p>
+                            <p class = "actors"><b>Actors: </b>Chris Pratt, Zoe Saldana, Dave Bautista</p>
+                            <p class = "plot"><b>Plot:</b> The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's ecounter with his father the ambitious celestial being Ego.</p>
+                            <p class = "language"><b>Language:</b> English</p>
+                            <p class = "awards"><b><i class = "fas fa-award"></i></b> Nominated for 1 Oscar</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- end of result container -->
+        </section>
+    
+  
+
+
+<!--  
+            <input id="input-text" type="button" required>
+            <button onclick="myFunction()">OK</button> -->
+            <!-- 
+             <div class="box" style="margin-top: 20px;">
+                    <p>Recent Searches</p>
+            </div>
+        </section>
+        <button id="submission" class="button is-outlined" style="display: block; margin: auto;">Search</button>
+       -->
+       
+<script type="text/javascript" src="assets/js/script.js"></script>
+<!-- this is the javascript about the navigation bar(to be able to open and close)-->
+<script src="assets/js/is-active.js"></script> 
+    </body>
+</html>
