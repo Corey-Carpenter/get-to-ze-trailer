@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1">
+        <title>Get to Ze Trailer</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    
+    <body>
+        <h1 class="title">Movie Category Project</h1>
+        <h2 class="subtitle">Choose Your Categories</h2>
+        <section class="section is-medium">
+            <div class="box">
+            <h3 class="subtitle">Plot Points:</h3>
+            <form name="plotPoints" id="plotPoints">
+                <label class="checkbox">
+                    <input type="checkbox">Space Battles
+                </label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Robot Invasions
+                </label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Pilots with cool nicknames
+                </label><br>
+            </form>
+        </div>
+        <div class="box">
+            <h3 class="subtitle">Genres:</h3>
+            <form name="genres" id="genres">
+                <label class="checkbox">
+                    <input type="checkbox">Action
+                </label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Comedy
+                </label><br>
+                <label class="checkbox">
+                    <input type="checkbox">Romance
+                </label><br>
+            </form>
+        </div>
+        <div class = "api-test">
+            <iframe id="ytplayer" type="text/html" width="640" height="360"
+            frameborder="0">
+            </iframe>
+        </div>
+        </section>
+        <section>
+            <form action="/action_page.php">
+                <input type="text" id="search" name="search" value="search">
+            </form>
+        </section>
+        <button id="fetch-button">Search</button>
+
+    
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
