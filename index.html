@@ -70,7 +70,6 @@
             </div>
           </nav>
           </section>
-          <section class="header"><img src="assets/image/logo.jpg"/>
         <h1 class="title">Movie Category Project</h1>
         <h2 class="subtitle">Search Your Favorite Movie</h2> 
     
@@ -79,56 +78,37 @@
 
 
     <!-- thiis is the section abou the movie-->
-        <section class="section">
-          <div class = "search-container">
+        <section class="wrapper">
+                <div class = "search-container">
 
-            <div class="field is-grouped">
-                <p class="control is-expanded">
-                  <input class="input" type="text" placeholder="Search Movie Title ..." 
-                  id = "movie-search-box" onkeyup="findMovies()" onclick ="findMovies()">
-                </p>
+                  <div class="field is-grouped search-element">
+                      <p class="control is-expanded">
+                        <input class="input" type="text" placeholder="Search Movie Title ..." 
+                        id = "movie-search-box" onkeyup="findMovies()" onclick ="findMovies()">
+                      </p>
 
-                   <div class = "search-list" id = "search-list"></div>
-            
-               
-            </div>
-
-            <div class="field is-grouped is-grouped-centered" >    
-                <p class="control ">
-                  <a class="button is-primary" href="movies.html">
-                    Search
-                  </a>  </p>
-            </div>
-          </div>
-            <div class = "search-container">
-              <div class = "search-element">
-
-
-                 
-
-          <div class = "wrapper">
-            <!-- search container -->
-            <div class = "search-container">
-                <div class = "search-element">
-                    <h3>Search Movie:</h3>
-                    <input type = "text" class = "form-control" placeholder="Search Movie Title ..." 
-                    id = "movie-search-box" onkeyup="findMovies()" onclick ="findMovies()">
-    
-                    <div class = "search-list" id = "search-list">
-                        <!-- list here -->
-                        <!-- <div class = "search-list-item">
-                            <div class = "search-item-thumbnail">
-                                <img src = "medium-cover.jpg">
-                            </div>
-                            <div class = "search-item-info">
-                                <h3>Guardians of the Galaxy Vol. 2</h3>
-                                <p>2017</p>
-                            </div>
-                        </div> -->
+                        <div class = "search-list" id = "search-list">
+                        
+                                          <!-- list here -->
+                                <!-- <div class = "search-list-item">
+                                    <div class = "search-item-thumbnail">
+                                        <img src = "medium-cover.jpg">
+                                    </div>
+                                    <div class = "search-item-info">
+                                        <h3>Guardians of the Galaxy Vol. 2</h3>
+                                        <p>2017</p>
+                                    </div>
+                                </div> -->
+                              <div class="field is-grouped is-grouped-centered" >    
+                                  <p class="control ">
+                                    <a class="button is-primary" href="movies.html">
+                                      Search
+                                    </a>  </p>
+                              </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- end of search container -->
+
     
             <!-- result container -->
             <div class = "container">
@@ -156,7 +136,7 @@
                 </div>
             </div>
             <!-- end of result container -->
-        </div>
+        </section>
     
   
 
@@ -173,6 +153,7 @@
        -->
        
 <script type="text/javascript" src="assets/js/script.js"></script>
+<!-- this is the javascript about the navigation bar(to be able to open and close)-->
 <script src="assets/js/is-active.js"></script> 
     </body>
 </html>
