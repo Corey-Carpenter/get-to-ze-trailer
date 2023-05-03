@@ -39,24 +39,27 @@ function getYoutubeAPI() {
           }
         });
 }
-/*
-getOMDBAPI();
-getYoutubeAPI();
-*/
+
+//getOMDBAPI();
+//getYoutubeAPI();
+
 
 const searchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
-const resultGrid = document.getElementById('result-grid');
+const resultGrid = document.getElementById('result-grid'); //we  can change result grid to something else that might better fit because we're not really doing a grid
 
-// load movies from API
+//loads the movies from OMDb API
 async function loadMovies(searchTerm){
+    //fetches results from api based on search term
     const URL = `https://omdbapi.com/?s=${searchTerm}&page=1&apikey=b4d0ef09&`;
-    const res = await fetch(`${URL}`);
-    const data = await res.json();
-    // console.log(data.Search);
+    //uses await to pause execution of loadMovies
+    const result = await fetch(`${URL}`);
+    const data = await result.json();
     if(data.Response == "True") displayMovieList(data.Search);
 }
 
+//finds movies on keyup through use of html
+//right now it's slow but I think it's because it's fetching from omdbAPI on every key up so it takes time for it to process. Still works tho
 function findMovies(){
     let searchTerm = (searchBox.value).trim();
     if(searchTerm.length > 0){
@@ -67,19 +70,25 @@ function findMovies(){
     }
 }
 
+//diplays movies in dropdown
+//might need to adjust how many movies pop up
 function displayMovieList(movies){
     searchList.innerHTML = "";
     for(let i = 0; i < movies.length; i++){
-        let movieListItem = document.createElement('div');
-        movieListItem.dataset.id = movies[i].imdbID; // setting movie id in  data-id
-        movieListItem.classList.add('search-list-item');
+        let movieList = document.createElement('div');
+         //Gets imdb IDbased on the search value
+        movieList.dataset.id = movies[i].imdbID; 
+        movieList.classList.add('search-list-item');
+        //displays image not found png if there isn't a poster available. Else displays the poster
         if(movies[i].Poster != "N/A")
             moviePoster = movies[i].Poster;
         else 
             moviePoster = "error404.html";
 
-        movieListItem.innerHTML = `
+        //I think this should be displayed on the page through inline html    
+        movieList.innerHTML = `
         <div class = "search-item-thumbnail">
+            
             <img src = "${moviePoster}">
         </div>
         <div class = "search-item-info">
@@ -87,50 +96,34 @@ function displayMovieList(movies){
             <p>${movies[i].Year}</p>
         </div>
         `;
-        searchList.appendChild(movieListItem);
-    }
-    loadMovieDetails();
-}
+        //right now the above code has the poster at the top, then the title, then the year. We can switch this around however we see fit. I think the poster should stay at the top with the title directly below. I think we maybe add the year below the plot in displayMovieDetails below but I'm up for anything. 
 
+        searchList.appendChild(movieList);
+    };
+    loadMovieDetails();
+};
+
+//load this onto movies.html as well
 function loadMovieDetails(){
     const searchListMovies = searchList.querySelectorAll('.search-list-item');
     searchListMovies.forEach(movie => {
         movie.addEventListener('click', async () => {
-            // console.log(movie.dataset.id);
             searchList.classList.add('hide-search-list');
             searchBox.value = "";
-            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=fc1fef96`);
+            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=b4d0ef09&`);
             const movieDetails = await result.json();
-            // console.log(movieDetails);
             displayMovieDetails(movieDetails);
         });
     });
 }
 
-function displayMovieDetails(details){
-    resultGrid.innerHTML = `
-    <div class = "movie-poster">
-        <img src = "${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt = "movie poster" src="movies.html" >
-    </div>
-    <div class = "movie-info">
-        <a href="movies.html" class = " button is-info"> Link </a> 
-        <h3 class = "movie-title">${details.Title}</h3>
-        <ul class = "movie-misc-info">
-            <li class = "year">Year: ${details.Year}</li>
-            <li class = "rated">Ratings: ${details.Rated}</li>
-            <li class = "released">Released: ${details.Released}</li>
-        </ul>
-        <p class = "genre"><b>Genre:</b> ${details.Genre}</p>
-        <p class = "writer"><b>Writer:</b> ${details.Writer}</p>
-        <p class = "actors"><b>Actors: </b>${details.Actors}</p>
-        <p class = "plot"><b>Plot:</b> ${details.Plot}</p>
-        <p class = "language"><b>Language:</b> ${details.Language}</p>
-        <p class = "awards"><b><i class = "fas fa-award"></i></b> ${details.Awards}</p>
-    </div>
-    `;
-}
+//TODO: create the function that takes clicks/enter to movies html
+//TODO: display the movie info and trailer on movies html
+//I deleted the whole display function because it was completely copy pasted and we can create our own to display how we want'
+//for now I think we should ignore the recommended button and focus on finishing our MVP. I don't know if there's a way to make the movies load faster on keyup because its really slow
 
 
+//this needs to go to movies.html if I'm not mistaken
 window.addEventListener('click', (event) => {
     if(event.target.className != "form-control"){
         searchList.classList.add('hide-search-list');
