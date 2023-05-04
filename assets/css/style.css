@@ -201,3 +201,7 @@ img{
     color: var(--yellow-color);
     margin: 1rem 0.7rem 0 0;
 }
+
+#logo {
+    object-fit: contain
+}
