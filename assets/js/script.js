@@ -64,14 +64,14 @@ function loadMovieDetails(){
 
             searchList.classList.add('hide-search-list');
             searchBox.value = "";
-            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=b4d0ef09&`);
+            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&plot=full&apikey=b4d0ef09&`);
             const movieDetails = await result.json();
             // searchedMovies = localStorage.getItem("placeHolderName");
             // console.log("@@@@@@@@@@@",searchedMovies)
             // searchedMovies.push(movieDetails.Title)
             // console.log("*******", searchedMovies)
-            localStorage.setItem("placeholderName", movieDetails.Title);
-            //console.log(movieDetails.Title);
+            localStorage.setItem("Title", movieDetails.Title);
+            localStorage.setItem("Plot", movieDetails.Plot);
             displayMovieDetails(movieDetails);
         });
     });
@@ -82,20 +82,20 @@ function displayMovieDetails(details) {
     resultGrid.innerHTML = `
     <div class = "movie-poster">
      <a href="movies.html">   <img src = "${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt = "movie poster" ></a>
-    </div>
+     <p class = "poster-text">Click the poster to see a movie trailer!</p>
+     </div>
+    
     <div class = "movie-info"> 
         <h3 class = "movie-title">${details.Title}</h3>
         <ul class = "movie-misc-info">
             <li class = "year">Year: ${details.Year}</li>
-            <li class = "rated">Ratings: ${details.Rated}</li>
-            <li class = "released">Released: ${details.Released}</li>
+            <br><li class = "rated">Rated: ${details.Rated}</li><br>
+            <br><li class = "genre">Genre: ${details.Genre}</li><br>
+            <br><li class = "actors">Actors: ${details.Actors}</li><br>
         </ul>
-        <p class = "genre"><b>Genre:</b> ${details.Genre}</p>
-        <p class = "writer"><b>Writer:</b> ${details.Writer}</p>
-        <p class = "actors"><b>Actors: </b>${details.Actors}</p>
         <p class = "plot"><b>Plot:</b> ${details.Plot}</p>
-        <p class = "language"><b>Language:</b> ${details.Language}</p>
-        <p class = "awards"><b><i class = "fas fa-award"></i></b> ${details.Awards}</p>
+        <p class = "metascore"><b>Metascore:</b> ${details.Metascore}</p>
+        <p class = "awards"><b>Awards:</b> ${details.Awards}</p>
     </div>
     `;
 };
