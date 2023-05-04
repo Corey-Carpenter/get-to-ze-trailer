@@ -1,7 +1,7 @@
-var movieTitle =  localStorage.getItem("Title");
-console.log (movieTitle);
+var movieTitle = localStorage.getItem("Title");
+var movieYear = localStorage.getItem("Year");
 var youtubeKey = "AIzaSyAsA-iqUV-RlNydntlU4Ft0L_5KY9RRkDI";
-var youtubeURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q="+movieTitle+"%20Trailer&type=video&key="+youtubeKey;
+var youtubeURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q="+movieTitle+movieYear+"%20Trailer&type=video&key="+youtubeKey;
 var trailersArray = [];
 
 
@@ -11,7 +11,6 @@ function getYoutubeAPI() {
             return response.json();
           })
           .then(function (data) {
-            console.log(data);
             for (i = 0; i < data.items.length; i++) {
                 var results = data.items[i];
                 var videoIDs = results.id.videoId;

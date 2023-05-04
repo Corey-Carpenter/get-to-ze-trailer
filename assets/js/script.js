@@ -61,17 +61,13 @@ function loadMovieDetails(){
     const searchListMovies = searchList.querySelectorAll(".search-list-item");
     searchListMovies.forEach(movie => {
         movie.addEventListener('click', async () => {
-
             searchList.classList.add('hide-search-list');
             searchBox.value = "";
             const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&plot=full&apikey=b4d0ef09&`);
             const movieDetails = await result.json();
-            // searchedMovies = localStorage.getItem("placeHolderName");
-            // console.log("@@@@@@@@@@@",searchedMovies)
-            // searchedMovies.push(movieDetails.Title)
-            // console.log("*******", searchedMovies)
             localStorage.setItem("Title", movieDetails.Title);
             localStorage.setItem("Plot", movieDetails.Plot);
+            localStorage.setItem("Year", movieDetails.Year);
             displayMovieDetails(movieDetails);
         });
     });
