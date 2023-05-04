@@ -1,4 +1,4 @@
-var OMDBKey = "b4d0ef09&";
+/*var OMDBKey = "b4d0ef09&";
 var OMDBURL = "http://www.omdbapi.com/";
 
 function getOMDBAPI() {
@@ -11,10 +11,15 @@ function getOMDBAPI() {
       });
 }
 
-var movieTitle = "Predator";
+getOMDBAPI();
+*/
+
+var movieTitle =  localStorage.getItem("placeholderName");
+console.log (movieTitle);
 var youtubeKey = "AIzaSyAsA-iqUV-RlNydntlU4Ft0L_5KY9RRkDI";
 var youtubeURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q="+movieTitle+"%20Trailer&type=video&key="+youtubeKey;
 var trailersArray = [];
+
 
 function getYoutubeAPI() {
     fetch (youtubeURL)
@@ -39,5 +44,5 @@ function getYoutubeAPI() {
           }
         });
 }
-getOMDBAPI();
+
 getYoutubeAPI();

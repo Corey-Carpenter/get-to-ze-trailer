@@ -1,5 +1,4 @@
 var searchedMovies;
-
 const searchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
@@ -72,6 +71,7 @@ function loadMovieDetails(){
             // searchedMovies.push(movieDetails.Title)
             // console.log("*******", searchedMovies)
             localStorage.setItem("placeholderName", movieDetails.Title);
+            //console.log(movieDetails.Title);
             displayMovieDetails(movieDetails);
         });
     });
@@ -106,3 +106,5 @@ window.addEventListener('click', (event) => {
         searchList.classList.add('hide-search-list');
     }
 });
+
+
