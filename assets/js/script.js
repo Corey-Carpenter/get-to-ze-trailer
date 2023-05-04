@@ -1,3 +1,4 @@
+var searchedMovies;
 
 const searchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
@@ -66,14 +67,18 @@ function loadMovieDetails(){
             searchBox.value = "";
             const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=b4d0ef09&`);
             const movieDetails = await result.json();
-
+            // searchedMovies = localStorage.getItem("placeHolderName");
+            // console.log("@@@@@@@@@@@",searchedMovies)
+            // searchedMovies.push(movieDetails.Title)
+            // console.log("*******", searchedMovies)
+            localStorage.setItem("placeholderName", movieDetails.Title);
             displayMovieDetails(movieDetails);
         });
     });
 }
 
 //displays the details grabbed in loadMovieDetails
-function displayMovieDetails(details){
+function displayMovieDetails(details) {
     resultGrid.innerHTML = `
     <div class = "movie-poster">
      <a href="movies.html">   <img src = "${(details.Poster != "N/A") ? details.Poster : "image_not_found.png"}" alt = "movie poster" ></a>
@@ -93,7 +98,7 @@ function displayMovieDetails(details){
         <p class = "awards"><b><i class = "fas fa-award"></i></b> ${details.Awards}</p>
     </div>
     `;
-}
+};
 
 //hides search list if anywhere outside is clicked
 window.addEventListener('click', (event) => {
