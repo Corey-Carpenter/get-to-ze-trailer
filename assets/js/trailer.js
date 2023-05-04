@@ -1,19 +1,3 @@
-/*var OMDBKey = "b4d0ef09&";
-var OMDBURL = "http://www.omdbapi.com/";
-
-function getOMDBAPI() {
-    fetch ("http://www.omdbapi.com/?apikey="+OMDBKey+"&i=tt0093773&plot=full")
-    .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data.Plot);
-      });
-}
-
-getOMDBAPI();
-*/
-
 var movieTitle =  localStorage.getItem("placeholderName");
 console.log (movieTitle);
 var youtubeKey = "AIzaSyAsA-iqUV-RlNydntlU4Ft0L_5KY9RRkDI";
@@ -32,7 +16,9 @@ function getYoutubeAPI() {
                 var results = data.items[i];
                 var videoIDs = results.id.videoId;
                 trailersArray.push(videoIDs);
-                var trailerPlayer = document.querySelector("#ytplayer");
+                var trailerPlayer = document.querySelector("#yt-player");
+                var trailerTitle = document.querySelector("#trailer-title");
+                trailerTitle.textContent = movieTitle;
                 if (trailersArray[0] !== null) {
                 trailerPlayer.setAttribute("src", "https://www.youtube.com/embed/"+trailersArray[0]);
                 }
