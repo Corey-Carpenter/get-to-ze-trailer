@@ -1,4 +1,4 @@
-var movieTitle =  localStorage.getItem("placeholderName");
+var movieTitle =  localStorage.getItem("Title");
 console.log (movieTitle);
 var youtubeKey = "AIzaSyAsA-iqUV-RlNydntlU4Ft0L_5KY9RRkDI";
 var youtubeURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q="+movieTitle+"%20Trailer&type=video&key="+youtubeKey;

@@ -1,13 +1,17 @@
 var lastMovieName;
-var displayDiv = document.querySelector("#result-grid")
+var lastMoviePlot;
+var displayDiv = document.querySelector("#past-result-grid")
 
 function lastMovieTitle() {
-  lastMovieName=  localStorage.getItem("placeholderName")
-  var h3 = document.createElement("h3")
-  h3.textContent = lastMovieName
-  displayDiv.appendChild(h3)
+  lastMovieName =  localStorage.getItem("Title")
+  lastMoviePlot = localStorage.getItem("Plot")
+  var title = document.createElement("h1")
+  title.textContent = lastMovieName
+  title.classList.add("movie-title")
+  var plot = document.createElement("h3")
+  plot.textContent = lastMoviePlot
+  displayDiv.appendChild(title)
+  displayDiv.appendChild(plot)
 }
-
-
 
 lastMovieTitle();
