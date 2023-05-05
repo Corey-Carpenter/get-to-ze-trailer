@@ -1,8 +1,11 @@
 var movieTitle = localStorage.getItem("Title");
 var movieYear = localStorage.getItem("Year");
-var youtubeKey = "AIzaSyAsA-iqUV-RlNydntlU4Ft0L_5KY9RRkDI";
+//var youtubeKey = "AIzaSyAsA-iqUV-RlNydntlU4Ft0L_5KY9RRkDI";
+var youtubeKey = "AIzaSyBnJ3LiEueVNautOkrnV1EXO_WdetfvkGI";
 var youtubeURL = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q="+movieTitle+movieYear+"%20Trailer&type=video&key="+youtubeKey;
 var trailersArray = [];
+console.log(movieTitle);
+console.log(movieYear);
 
 
 function getYoutubeAPI() {
