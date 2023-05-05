@@ -71,7 +71,7 @@ img{
     max-height: 500px;
     overflow-y: scroll;
     z-index: 10;
-    background-color: lightblue;
+    background-color: lightslategray;
 }
 .search-list .search-list-item{
     background-color: var(--light-dark-color);
