@@ -14,9 +14,14 @@ APIs:
 - [YouTube API](https://developers.google.com/youtube)
 
 ## Usage
-1. User would insert title of movie they would want to search
-2. Press [Enter] Button
+![alt text](assets/image/screenshot1.PNG)
+User enters title of the movie and a search bar will drop down of similar movie titles
 
+![alt text](assets/image/screenshot2.PNG)
+It will display movie information and poster
+
+![alt text](assets/image/screenshot3.PNG)
+User clicks on the poster and it will move to another HTML page where the user can click on the trailer from YouTube
 
 ## Credits
 Group Members:
